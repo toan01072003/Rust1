@@ -7,37 +7,37 @@ fn exercise1(color: &str) -> String {
 // Exercise 2
 // Fix all errors without adding newline
 fn exercise2() -> String {
-    let mud s = String::from("hello");
-    s.push(',');
-    s.push(" world");
-    s += "!".to_string();
-    s;
+    let mut s:String = String::from("hello");
+    s.push_str(",");
+    s.push_str(" world");
+    s += "!";
+    s
 }
 // Exercise 3
 // Fix errors without removing any line
 fn exercise3() -> String {
     let s1:String = String::from("hello,");
     let s2:String = String::from("world!");
-    let s3:String = s1 + s2;
-    s3;
+    let s3:String = s1 + &s2;
+    s3
 }
 
 // Exercise 4
 // Reverse a string
 
-fn reverse_string(input: &str) -> String {
+fn reverse_string(s: &str) -> String {
     let mut chars: Vec<char> = s.chars().collect();
     let len = chars.len();
     for i in 0..len/2 {
         chars.swap(i, len - 1 - i);
     }
-    chars.into_iter().collect();
+    chars.into_iter().collect()
 }
 
 
 // Exercise 5
 // Check if a string is a palindrome
-fn is_palindrome(word: &str) -> bool {
+fn is_palindrome(s: &str) -> bool {
     let len = s.len();
     for i in 0..len/2 {
         if s.as_bytes()[i] != s.as_bytes()[len - 1 - i] {
@@ -50,9 +50,9 @@ fn is_palindrome(word: &str) -> bool {
 // Exercise 6
 // Count the occurrences of a character in a string
 fn count_char_occurrences(string: &str, ch: char) -> usize {
-    string.chars().filter(|&ch| ch == c).count();
-    let count = count_occurrences(string, ch);
+    let count = string.chars().filter(|&c| c == ch).count();
     println!("{} appears {} times in {}", ch, count, string);
+    count
 }
 
 #[cfg(test)]

@@ -4,28 +4,21 @@
 // - another function call
 // - additional variables
 pub fn bigger(a: i32, b: i32) -> i32 {
-   if a>b {
-    println!(a);
-   }
-   else {
-    println!(b);
-   }
+    if a > b { a } else { b }
 }
 
 //Exercise 2
 // Input: Provide an arbitrary value of number
 // Check number is Positive or Negative or Zero
 // Output: &str
-fn check_number(number: u32) -> &'static str {
-   if number == 0 {
-    println!("{} is zero", number);
-   }
-   else if number >0 {
-    println!("{} is positive", number);
-   }
-   else {
-    println!("{} is negative", number);
-   }
+fn check_number(number: i32) -> &'static str {
+    if number > 0 {
+        "Positive"
+    } else if number < 0 {
+        "Negative"
+    } else {
+        "Zero"
+    }
 }
 
 // Exercise 3
@@ -36,7 +29,7 @@ pub fn foo_if_fizz(fizzish: &str) -> &str {
     if fizzish == "fizz" {
         "foo"
     } else {
-        1
+        "fizz"
     }
 }
 
@@ -44,24 +37,27 @@ pub fn foo_if_fizz(fizzish: &str) -> &str {
 // Determine if a given year is a leap year
 // Implement logic
 fn is_leap_year(year: i32) -> bool {
-    if (year % 4 == 0) && (year % 100 != 0 || year % 400 == 0) {
-        println!("{} is a leap year", year);
+    if (year % 4 == 0) && (year % 100 != 0 || year % 400 == 0)  {
+        true
     }
-    else println!("{} is a given year", year);
+    else {
+      false  
+
+    }
 }
 
 // Exercise 5
 // Calculate the factorial of a number
 // Implement logic
-fn factorial(n: u32) -> u32 {
-    let mud fact: i32 = 0;
-    let mud i: i32 =1;
+fn factorial(n: i32) -> i32 {
+    let mut fact: i32 = 0;
+    let mut i: i32 =1;
 
     while i== n {
-        fact *= i;
-        i++;
+        fact  = fact * i;
+        i = i +1;
     }
-    println!("factorial of a number  is {} ", fact);
+    fact
 }
 
 // Exercise 6
@@ -69,18 +65,17 @@ fn factorial(n: u32) -> u32 {
 // Implement logic
 
 fn is_prime(n: u32) -> bool {
-    fn is_prime(n: u32) -> bool {
         if n <= 1 {
-            return false;
+             false;
         }
         for i in 2..=(n as f32).sqrt() as u32 {
             if n % i == 0 {
-                return false;
+              false;
             }
         }
         true
     }
-}
+
 
 
 // Don't mind this for now :)

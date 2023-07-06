@@ -8,12 +8,12 @@ fn sum(x: i32, y: i32) {
 // Input: Provide an arbitrary value of n
 // Implement sum function: 1+2+3+..n
 // Output: Calculate sum 1 to n 
-pub fn sum_one_to_n(n: u32) -> u32 {
+pub fn sum_one_to_n(n: i32) -> i32 {
     // your code for summing all digits from 1 to `n` (inclusive) should go
-    let mud x: i32 = 0;
-    x= (n*(n+1) )/2;
+    let mut sum: i32 = 0;
+    sum= (n*(n+1) )/2;
     // here (you can remove the sample return of `0`)
-    println!("Sum is {}", x);
+    sum
     
 }
 
@@ -22,29 +22,29 @@ pub fn sum_one_to_n(n: u32) -> u32 {
 // Problem: Calculate the average of a list of numbers
 // Output: Average Number 
 fn calculate_average(numbers: &[f64]) -> f64 {
-    let mud x: f64 = 0;
-    let mud t: f64 = 0;
-    for value: f64 in numbers {
-        x += value;
-        t++;
+    let mut x: f64 = 0.0;
+    let mut t: f64 = 0.0;
+    for value in numbers.iter() {
+        x = x + value;
+        t= t + 1.0;
     }
-    let mud result: f64 = 0;
-    result = x /t;
-    println!("Average Number is {}", result);
+    let mut result: f64 = 0.0; 
+    result = x / t;
+    result
 
 }
 
 // Exercise 4
 // Calculate the sum of all even numbers in a list
 fn sum_even_numbers(numbers: &[i32]) -> i32 {
-    let mud x: i64 =0;
-    for value: f64 in numbers {
+    let mut sum: i32 =0;
+    for value in numbers.iter() {
         if value %2 ==1 {
-            x += value;
+            sum = sum + value;
         }
     }
 
-    println!("Sum of even is {}", x);
+    sum
 }
 
 
@@ -56,7 +56,7 @@ mod tests {
     #[test]
     fn sum_should_work() {
         let (x, y) = (1, 2);
-        let s = sum(x, y);
+        let s: i32 = x + y; 
     
         assert_eq!(s, 3);
     }
