@@ -4,7 +4,12 @@
 // - another function call
 // - additional variables
 pub fn bigger(a: i32, b: i32) -> i32 {
-    todo!()
+   if a>b {
+    println!(a);
+   }
+   else {
+    println!(b);
+   }
 }
 
 //Exercise 2
@@ -12,7 +17,15 @@ pub fn bigger(a: i32, b: i32) -> i32 {
 // Check number is Positive or Negative or Zero
 // Output: &str
 fn check_number(number: u32) -> &'static str {
-    todo!()
+   if number == 0 {
+    println!("{} is zero", number);
+   }
+   else if number >0 {
+    println!("{} is positive", number);
+   }
+   else {
+    println!("{} is negative", number);
+   }
 }
 
 // Exercise 3
@@ -31,14 +44,24 @@ pub fn foo_if_fizz(fizzish: &str) -> &str {
 // Determine if a given year is a leap year
 // Implement logic
 fn is_leap_year(year: i32) -> bool {
-    todo!()
+    if (year % 4 == 0) && (year % 100 != 0 || year % 400 == 0) {
+        println!("{} is a leap year", year);
+    }
+    else println!("{} is a given year", year);
 }
 
 // Exercise 5
 // Calculate the factorial of a number
 // Implement logic
 fn factorial(n: u32) -> u32 {
-    todo!()
+    let mud fact: i32 = 0;
+    let mud i: i32 =1;
+
+    while i== n {
+        fact *= i;
+        i++;
+    }
+    println!("factorial of a number  is {} ", fact);
 }
 
 // Exercise 6
@@ -46,7 +69,17 @@ fn factorial(n: u32) -> u32 {
 // Implement logic
 
 fn is_prime(n: u32) -> bool {
-    todo!()
+    fn is_prime(n: u32) -> bool {
+        if n <= 1 {
+            return false;
+        }
+        for i in 2..=(n as f32).sqrt() as u32 {
+            if n % i == 0 {
+                return false;
+            }
+        }
+        true
+    }
 }
 
 

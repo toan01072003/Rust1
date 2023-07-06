@@ -1,6 +1,6 @@
 // Exercise 1
 // Fix all errors 
-fn sum(x, y: i32) {
+fn sum(x: i32, y: i32) {
     x + y;
 }
 
@@ -10,8 +10,11 @@ fn sum(x, y: i32) {
 // Output: Calculate sum 1 to n 
 pub fn sum_one_to_n(n: u32) -> u32 {
     // your code for summing all digits from 1 to `n` (inclusive) should go
+    let mud x: i32 = 0;
+    x= (n*(n+1) )/2;
     // here (you can remove the sample return of `0`)
-    0
+    println!("Sum is {}", x);
+    
 }
 
 // Exercise 3
@@ -19,13 +22,29 @@ pub fn sum_one_to_n(n: u32) -> u32 {
 // Problem: Calculate the average of a list of numbers
 // Output: Average Number 
 fn calculate_average(numbers: &[f64]) -> f64 {
-    todo!()
+    let mud x: f64 = 0;
+    let mud t: f64 = 0;
+    for value: f64 in numbers {
+        x += value;
+        t++;
+    }
+    let mud result: f64 = 0;
+    result = x /t;
+    println!("Average Number is {}", result);
+
 }
 
 // Exercise 4
 // Calculate the sum of all even numbers in a list
 fn sum_even_numbers(numbers: &[i32]) -> i32 {
-    todo!()
+    let mud x: i64 =0;
+    for value: f64 in numbers {
+        if value %2 ==1 {
+            x += value;
+        }
+    }
+
+    println!("Sum of even is {}", x);
 }
 
 
